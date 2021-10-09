@@ -1,0 +1,77 @@
+if game.PlaceId == 318978013 then
+local gui = Instance.new("ScreenGui")
+local ui = Instance.new("Frame")
+local logo = Instance.new("ImageLabel")
+local title = Instance.new("TextLabel")
+local autogoal = Instance.new("TextButton")
+local autointersept = Instance.new("TextButton")
+local madeby = Instance.new("TextLabel")
+
+gui.Name = "gui"
+gui.Parent = game:WaitForChild("CoreGui")
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ui.Name = "ui"
+ui.Parent = gui
+ui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ui.Position = UDim2.new(0.177215189, 0, 0.61910671, 0)
+ui.Size = UDim2.new(0, 174, 0, 164)
+ui.Draggable = true
+ui.Active = true
+ui.Selectable = true
+
+logo.Name = "logo"
+logo.Parent = ui
+logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+logo.Size = UDim2.new(0, 41, 0, 41)
+logo.Image = "http://www.roblox.com/asset/?id=7691453072"
+
+title.Name = "title"
+title.Parent = ui
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.Position = UDim2.new(0.233606979, 0, 0, 0)
+title.Size = UDim2.new(0, 133, 0, 41)
+title.Font = Enum.Font.SourceSans
+title.Text = "kick off gui"
+title.TextColor3 = Color3.fromRGB(0, 0, 0)
+title.TextSize = 14.000
+
+autogoal.Name = "autogoal"
+autogoal.Parent = ui
+autogoal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+autogoal.Position = UDim2.new(0.0523809493, 0, 0.341463417, 0)
+autogoal.Size = UDim2.new(0, 54, 0, 22)
+autogoal.Font = Enum.Font.SourceSans
+autogoal.Text = "autogoal"
+autogoal.TextColor3 = Color3.fromRGB(0, 0, 0)
+autogoal.TextSize = 14.000
+autogoal.MouseButton1Click:Connect(function()
+	game.Workspace.MapHolder:GetChildren()[1].BlueGoal.Position=game.Players.LocalPlayer.Character.HumanoidRootPart.Position;
+	game.Workspace.MapHolder:GetChildren()[1].RedGoal.Position=game.Players.LocalPlayer.Character.HumanoidRootPart.Position;
+	game.Workspace.SoccerBall.Position=game.Players.LocalPlayer.Character["Right Leg"].Position;
+	game.Players.LocalPlayer.Character.Humanoid.Jump=true;
+end)
+
+autointersept.Name = "autointersept"
+autointersept.Parent = ui
+autointersept.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+autointersept.Position = UDim2.new(0.489162564, 0, 0.341463417, 0)
+autointersept.Size = UDim2.new(0, 78, 0, 22)
+autointersept.Font = Enum.Font.SourceSans
+autointersept.Text = "autointersept"
+autointersept.TextColor3 = Color3.fromRGB(0, 0, 0)
+autointersept.TextSize = 14.000
+autointersept.MouseButton1Click:Connect(function()
+	game:GetService("ReplicatedStorage").MasterKey:FireServer("Kick", "Trickshot", game:GetService("Workspace").SoccerBall, 58.777630615234, Vector3.new(9.64690495, 82.8000031, -70.1397018), Vector3.new(25.7804337, -56.2313538, -428.990417), Vector3.new(34.4858704, -89.2313538, -492.285004))
+end)
+
+madeby.Name = "madeby"
+madeby.Parent = ui
+madeby.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+madeby.Position = UDim2.new(0, 0, 0.853658557, 0)
+madeby.Size = UDim2.new(0, 173, 0, 24)
+madeby.Font = Enum.Font.SourceSans
+madeby.Text = "made by MutantFate on github"
+madeby.TextColor3 = Color3.fromRGB(0, 0, 0)
+madeby.TextSize = 14.000
+end
